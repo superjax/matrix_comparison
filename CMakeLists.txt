@@ -18,4 +18,8 @@ add_executable(matrix_test
   src/main.cpp
 )
 
+add_executable(largest_eig_value
+  src/largest_evec.cpp
+)
+
 target_link_libraries(matrix_test gsl gslcblas)

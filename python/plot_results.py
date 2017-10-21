@@ -3,12 +3,12 @@
 import matplotlib.pyplot as plt
 import csv
 
-size = []
-TNT = []
-GSL = []
-Eigen = []
-
 def plot_results(filename):
+    size = []
+    TNT = []
+    GSL = []
+    Eigen = []
+
     csvfile = open(filename, 'rb')
 
     reader = csv.reader(csvfile, delimiter
@@ -23,11 +23,22 @@ def plot_results(filename):
         GSL.append(float(row[3]))
 
     plt.figure(1)
-    plt.title("Symmetric Eigenvalue Decomposition")
+    plt.title("Asymmetric Eigenvalue Decomposition")
     ax = plt.subplot(111)
     plt.plot(size, TNT, label="TNT")
     plt.plot(size, GSL, label="GSL")
     plt.plot(size, Eigen, label="Eigen")
+    plt.legend()
+    ax.set_yscale("log")
+    plt.ylabel('$\mu$s')
+    plt.xlabel('matrix size')
+
+    plt.figure(2)
+    plt.title("Asymmetric Eigenvalue Decomposition (Small matrices)")
+    ax = plt.subplot(111)
+    plt.plot(size[:25], TNT[:25], label="TNT")
+    plt.plot(size[:25], GSL[:25], label="GSL")
+    plt.plot(size[:25], Eigen[:25], label="Eigen")
     plt.legend()
     ax.set_yscale("log")
     plt.ylabel('$\mu$s')

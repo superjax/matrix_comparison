@@ -30,7 +30,7 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j4 -l4
-./tnt_matrix_test
+./matrix_test
 ```
 
 To plot the comparison

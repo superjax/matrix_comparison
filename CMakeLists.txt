@@ -18,8 +18,4 @@ add_executable(matrix_test
   src/main.cpp
 )
 
-add_executable(tnt_matrix_test
-  src/tnt_main.cpp
-)
-
-target_link_libraries(tnt_matrix_test gsl gslcblas)
+target_link_libraries(matrix_test gsl gslcblas)

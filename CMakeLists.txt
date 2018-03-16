@@ -18,4 +18,8 @@ add_executable(matrix_test
   src/main.cpp
 )
 
+add_executable(eigen_decomp
+  src/eigen_decomp.cpp
+)
+
 target_link_libraries(matrix_test gsl gslcblas)
